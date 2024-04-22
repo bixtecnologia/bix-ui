@@ -4,7 +4,7 @@
   "description": "The Bix library of UI Components",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf ./dist && tsc",
     "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
