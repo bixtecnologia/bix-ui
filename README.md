@@ -43,5 +43,7 @@ export default App;
 
 ### TODO
 
+- Change the import: needs to create the comp with the content of index.tsx
+- Needs to use or create the /ui/ inside components
 - Ad a unit test to the component
 - Create a flag to pull the unit test too
