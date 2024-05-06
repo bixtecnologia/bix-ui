@@ -45,7 +45,5 @@ export default App;
 
 ### Working on
 
-- Error message
-- Update readme
 - Ad a unit test to the component
 - Create a flag to pull the unit test too
