@@ -29,6 +29,11 @@ program
       `${component}/index.tsx`
     );
 
+    if (!fs.existsSync(componentPath)) {
+      console.error(`Error: Component '${component}' does not exist.`);
+      process.exit(1);
+    }
+
     const targetDir = path.resolve(process.cwd(), options.componentDir);
     const targetPath = path.resolve(targetDir, `${component}.tsx`);
 

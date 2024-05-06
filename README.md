@@ -24,6 +24,8 @@ After installation, you can add components to your project using the included CL
 npx bix-ui add ButtonBase -c ./path/to/components/folder
 ```
 
+If you not use the -c flag, it will search or create the dir `components/ui` and put the component inside
+
 **Importing and Using Components**
 After adding a component, import and use it in your React files:
 
@@ -43,5 +45,7 @@ export default App;
 
 ### Working on
 
+- Error message
+- Update readme
 - Ad a unit test to the component
 - Create a flag to pull the unit test too
