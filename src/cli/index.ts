@@ -20,7 +20,7 @@ program
   .option(
     "-c, --component-dir <dir>",
     "Directory to copy component into",
-    "./components"
+    "components/ui"
   )
   .action((component, options) => {
     const componentPath = path.resolve(
@@ -28,21 +28,18 @@ program
       "../../src/components",
       `${component}/index.tsx`
     );
-    const targetPath = path.resolve(
-      process.cwd(),
-      options.componentDir,
-      component,
-      "index.tsx"
-    );
 
-    if (!fs.existsSync(path.dirname(targetPath))) {
-      fs.mkdirSync(path.dirname(targetPath), { recursive: true });
+    const targetDir = path.resolve(process.cwd(), options.componentDir);
+    const targetPath = path.resolve(targetDir, `${component}.tsx`);
+
+    if (!fs.existsSync(targetDir)) {
+      fs.mkdirSync(targetDir, { recursive: true });
     }
 
     try {
       fs.copyFileSync(componentPath, targetPath);
       console.log(
-        `Component ${component} added to ${options.componentDir}/${component}`
+        `Component ${component} added to ${targetDir}/${component}.tsx`
       );
     } catch (err) {
       console.error("Failed to copy component:", err);

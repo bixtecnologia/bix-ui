@@ -1,31 +1,31 @@
 # BIX-UI
 
-BIX-UI é uma biblioteca de componentes de interface do usuário desenvolvida para React, utilizando TypeScript. É projetada para facilitar a reutilização de componentes em diversos projetos através de uma interface CLI simples.
+BIX-UI is a user interface component library developed for React, utilizing TypeScript. It is designed to facilitate component reuse across various projects through a simple CLI interface.
 
-## Características
+## Features
 
-- **Reutilização de Componentes**: Facilite a manutenção e consistência do design em diversos projetos.
-- **Interface CLI**: Instale componentes individualmente conforme a necessidade.
+- **Component Reusability**: Simplify maintenance and design consistency across multiple projects.
+- **CLI Interface**: Install components individually as needed.
 
-## Instalação
+## Installation
 
-Você pode instalar o BIX-UI diretamente via npm:
+You can install BIX-UI directly via npm:
 
 ```bash
 npm install bix-ui
 ```
 
-## Uso
+## Usage
 
-**Adicionando Componentes**
-Após a instalação, você pode adicionar componentes ao seu projeto usando o CLI incluído. Por exemplo, para adicionar o componente ButtonBase, execute:
+**Adding Components**
+After installation, you can add components to your project using the included CLI. For example, to add the ButtonBase component, run:
 
 ```bash
 npx bix-ui add ButtonBase -c ./path/to/components/folder
 ```
 
-**Importação e Uso de Componentes**
-Após adicionar um componente, importe e use-o em seus arquivos React:
+**Importing and Using Components**
+After adding a component, import and use it in your React files:
 
 ```tsx
 import ButtonBase from "./path/to/components/folder/ButtonBase";
