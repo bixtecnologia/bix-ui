@@ -1,7 +1,9 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import { dirname, join } from "path";
+import { fileURLToPath } from "url";
 
-const filePath = path.join(__dirname, "../dist/cli/index.js");
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const filePath = join(__dirname, "../dist/cli/index.js");
 
 try {
   if (process.platform !== "win32") {
