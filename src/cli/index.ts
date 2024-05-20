@@ -4,6 +4,7 @@ import { Command } from "commander";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import inquirer from "inquirer";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -22,7 +23,7 @@ program
     "Directory to copy component into",
     "components/ui"
   )
-  .action((component, options) => {
+  .action(async (component, options) => {
     const componentPath = path.resolve(
       __dirname,
       "../../src/components",
@@ -37,15 +38,29 @@ program
     const targetDir = path.resolve(process.cwd(), options.componentDir);
     const targetPath = path.resolve(targetDir, `${component}.tsx`);
 
+    if (fs.existsSync(targetPath)) {
+      const answers = await inquirer.prompt([
+        {
+          type: "confirm",
+          name: "overwrite",
+          message: `The component ${component} already exists. Do you want to overwrite it?`,
+          default: false,
+        },
+      ]);
+
+      if (!answers.overwrite) {
+        console.log("Component addition cancelled.");
+        return;
+      }
+    }
+
     if (!fs.existsSync(targetDir)) {
       fs.mkdirSync(targetDir, { recursive: true });
     }
 
     try {
       fs.copyFileSync(componentPath, targetPath);
-      console.log(
-        `Component ${component} added to ${targetDir}/${component}.tsx`
-      );
+      console.log(`Component ${component} added to ${targetPath}`);
     } catch (err) {
       console.error("Failed to copy component:", err);
     }

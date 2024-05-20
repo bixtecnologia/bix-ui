@@ -1,6 +1,6 @@
 {
   "name": "bix-ui",
-  "version": "1.1.3",
+  "version": "1.2.0",
   "type": "module",
   "description": "The Bix library of UI Components",
   "main": "index.js",
@@ -26,11 +26,13 @@
   "dependencies": {
     "classnames": "^2.5.1",
     "commander": "^12.0.0",
+    "inquirer": "^9.2.22",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@types/commander": "^2.12.2",
+    "@types/inquirer": "^9.0.7",
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.79",
     "rimraf": "^5.0.5",
