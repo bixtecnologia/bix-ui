@@ -12,7 +12,9 @@
     "postbuild": "sh postbuild.sh",
     "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "node scripts/setPermissions.js"
+    "postinstall": "node scripts/setPermissions.js",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "keywords": [
     "bix",
@@ -27,15 +29,25 @@
     "classnames": "^2.5.1",
     "commander": "^12.0.0",
     "inquirer": "^9.2.22",
+    "lucide-react": "^0.511.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/react": "^8.6.14",
+    "@storybook/react-vite": "^8.6.14",
+    "@storybook/test": "^8.6.14",
     "@types/commander": "^2.12.2",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.79",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.4",
+    "postcss-loader": "^8.1.1",
     "rimraf": "^5.0.5",
+    "storybook": "^8.6.14",
     "tailwindcss": "^2.2.7",
     "typescript": "^4.1.2"
   }
