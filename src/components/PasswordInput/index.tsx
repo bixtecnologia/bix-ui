@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Eye, EyeOff, Check, X, Dot } from 'lucide-react';
 import cn from 'classnames';
 
-// START: Inlined content from utils.ts (exports removed)
 type PasswordStrength = "very-weak" | "weak" | "good" | "great";
 
 function getPasswordStrength(password: string): PasswordStrength {
@@ -36,7 +35,6 @@ function checkPasswordCriteria(password: string): PasswordCriteria {
     specialChar: /[\W_]/.test(password),
   };
 }
-// END: Inlined content from utils.ts
 
 interface PasswordInputProps {
   value: string;
