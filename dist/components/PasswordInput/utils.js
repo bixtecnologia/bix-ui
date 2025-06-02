@@ -18,3 +18,12 @@ export function getPasswordStrength(password) {
         return "good";
     return "great";
 }
+export function checkPasswordCriteria(password) {
+    return {
+        minLength: password.length >= 8,
+        lowercase: /[a-z]/.test(password),
+        uppercase: /[A-Z]/.test(password),
+        number: /\d/.test(password),
+        specialChar: /[\W_]/.test(password), // \W is non-alphanumeric, _ is underscore
+    };
+}
