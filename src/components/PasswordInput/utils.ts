@@ -13,3 +13,21 @@ export function getPasswordStrength(password: string): PasswordStrength {
   if (score === 3 || score === 4) return "good";
   return "great";
 }
+
+export interface PasswordCriteria {
+  minLength: boolean;
+  lowercase: boolean;
+  uppercase: boolean;
+  number: boolean;
+  specialChar: boolean;
+}
+
+export function checkPasswordCriteria(password: string): PasswordCriteria {
+  return {
+    minLength: password.length >= 8,
+    lowercase: /[a-z]/.test(password),
+    uppercase: /[A-Z]/.test(password),
+    number: /\d/.test(password),
+    specialChar: /[\W_]/.test(password),
+  };
+}
