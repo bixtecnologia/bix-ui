@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ImageUpload } from './index';
 
 const meta = {
-  title: 'Components/ImageUpload',
+  title: 'Form/FileUpload/ImageUpload',
   component: ImageUpload,
   parameters: {
     layout: 'centered',
